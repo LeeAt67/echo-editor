@@ -210,10 +210,19 @@ export interface EchoEditorProps {
    * Accepts string, array or object
    */
   contentClass?: string | string[] | Record<string, any>
+
+  /**
+   * Use custom fullscreen logic
+   * When true, editor will only emit fullscreenChange event and let parent component handle fullscreen UI
+   * When false (default), editor will use built-in fullscreen styles
+   * @default false
+   */
+  customFullscreen?: boolean
 }
 
 export interface EchoEditorEmits {
   (event: 'enter'): void
   (event: 'change', value: EchoEditorOnChange): void
   (event: 'update:modelValue', value: string | JSONContent): void
+  (event: 'fullscreenChange', isFullscreen: boolean): void
 }

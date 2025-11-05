@@ -92,6 +92,8 @@
           v-model="content"
           :maxHeight="512"
           output="html"
+          :custom-fullscreen="true"
+          @fullscreenChange="handleFullscreenChange"
         />
       </div>
       <div class="mt-6 rounded-lg border bg-muted p-4">
@@ -268,6 +270,12 @@ const fullExtensions = [
 
 function toggleMinimal() {
   minimal.value = !minimal.value
+}
+
+function handleFullscreenChange(isFullscreen: boolean) {
+  if (isFullscreen) {
+    console.log('isScreen')
+  }
 }
 
 async function handleFileUpload(files: File[]) {

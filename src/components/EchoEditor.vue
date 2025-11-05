@@ -51,6 +51,7 @@ const props = withDefaults(defineProps<EchoEditorProps>(), {
   extensions: () => [],
   editorClass: undefined,
   contentClass: undefined,
+  customFullscreen: false,
 })
 
 const emit = defineEmits<EchoEditorEmits>()
@@ -133,7 +134,8 @@ watch(
 )
 
 const contentDynamicStyles = computed(() => ({
-  ...(unref(isFullscreen)
+  // Only apply built-in fullscreen styles when customFullscreen is false
+  ...(!props.customFullscreen && unref(isFullscreen)
     ? { height: '100%', overflowY: 'auto' as const }
     : {
         minHeight: getCssUnitWithDefault(props.minHeight),
@@ -186,6 +188,14 @@ watch(
   }
 )
 
+// Watch fullscreen state and emit to parent component
+watch(
+  isFullscreen,
+  val => {
+    emit('fullscreenChange', val)
+  }
+)
+
 onUnmounted(() => {
   editor?.destroy()
 })
@@ -211,7 +221,7 @@ defineExpose({ editor })
     <div
       class="relative flex flex-col overflow-hidden"
       :class="{
-        '!fixed bg-background inset-0 z-[10]  w-full h-full m-0 rounded-[0.5rem]': isFullscreen,
+        '!fixed bg-background inset-0 z-[10]  w-full h-full m-0 rounded-[0.5rem]': !customFullscreen && isFullscreen,
       }"
     >
       <Menubars v-if="!hideMenubar" :editor="editor" :disabled="disabled" />

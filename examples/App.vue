@@ -98,6 +98,8 @@
           :maxHeight="512"
           output="html"
           :dark="theme === 'dark'"
+          :custom-fullscreen="true"
+          @fullscreenChange="handleFullscreenChange"
         >
         </echo-editor>
       </div>
@@ -294,6 +296,12 @@ async function handleFileUpload(files: File[]) {
 }
 function toggleMinimal() {
   minimal.value = !minimal.value
+}
+
+function handleFullscreenChange(isFullscreen: boolean) {
+  if (isFullscreen) {
+    console.log('isScreen')
+  }
 }
 
 /**

@@ -58,6 +58,6 @@ function handleOpen() {
 </script>
 
 <template>
-  <ActionButton :action="handleOpen" title="Comment" :disabled="disabled" :icon="icon" :tooltip="tooltip" />
+  <ActionButton :action="handleOpen" :disabled="disabled" :icon="icon" :tooltip="tooltip" />
 </template>
 

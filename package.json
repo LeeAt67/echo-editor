@@ -1,14 +1,14 @@
 {
-  "name": "@lxw/echo-editor",
-  "version": "0.6.0",
+  "name": "@leeat/echo-editor",
+  "version": "0.6.3",
   "private": false,
   "license": "MIT",
-  "description": "A modern AI-powered WYSIWYG rich-text editor for Vue, based on Tiptap and shadcn-vue (Customized version)",
-  "author": "Your Name <your-email@example.com>",
-  "homepage": "https://github.com/your-username/echo-editor/",
+  "description": "A modern AI-powered WYSIWYG and Highly Customized RichTextEditor for Vue, based on Tiptap and shadcn-vue",
+  "author": "1036232425@qq.com",
+  "homepage": "https://github.com/LeeAt67",
   "repository": {
     "type": "git",
-    "url": "https://github.com/your-username/echo-editor/"
+    "url": "https://github.com/LeeAt67/echo-editor"
   },
   "scripts": {
     "dev": "vite",
@@ -23,7 +23,7 @@
     "format:check": "prettier --check .",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx,.vue src",
     "lint:fix": "eslint --ext .js,.jsx,.ts,.tsx,.vue src --fix",
-    "push": "pnpm build:lib && pnpm publish --no-git-checks --registry https://registry.npmjs.org/",
+    "push": "pnpm build:lib && pnpm publish --access public --no-git-checks",
     "prepare": "husky"
   },
   "config": {
@@ -57,6 +57,10 @@
       "import": "./lib/style.css",
       "require": "./lib/style.css"
     }
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   },
   "sideEffects": false,
   "files": [
