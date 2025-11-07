@@ -77,24 +77,38 @@ async function handleSubmit() {
       return
     }
 
-    // 生成唯一的评论 ID
-    const commentId = `comment-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
+    // 生成临时评论ID（用于传递给外部回调）
+    const tempCommentId = `comment-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`
 
     // 获取 onCommentCreate 回调
     const onCommentCreate = props.editor.extensionManager.extensions
       .find(e => e.name === 'comment')?.options?.onCommentCreate
 
-    // 调用回调，将数据暴露给外部
+    // 调用回调，获取真实的评论ID
+    let realCommentId: string | null = tempCommentId // 默认使用临时ID
+    
     if (typeof onCommentCreate === 'function') {
-      await onCommentCreate({
-        commentId,
+      const result = await onCommentCreate({
+        commentId: tempCommentId,
         selectedText,
         annotationContent: content.value,
       })
+      
+      // 如果回调返回了真实ID，则使用真实ID；如果返回null，表示创建失败
+      if (result === null) {
+        toast({
+          title: t.value('editor.comment.error'),
+          description: t.value('editor.comment.createFailed'),
+          variant: 'destructive',
+        })
+        return
+      } else if (typeof result === 'string') {
+        realCommentId = result
+      }
     }
 
-    // 为选中的文本添加评论标记
-    props.editor.chain().focus().setComment(commentId).run()
+    // 使用真实ID为选中的文本添加评论标记
+    props.editor.chain().focus().setComment(realCommentId).run()
 
     // 关闭菜单并清空输入
     handleClose()

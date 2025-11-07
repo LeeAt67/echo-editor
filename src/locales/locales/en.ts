@@ -247,6 +247,7 @@ const locale: Record<string, string> = {
   'editor.comment.noSelection': 'Please select some text first',
   'editor.comment.contentRequired': 'Please enter comment content',
   'editor.comment.unknownError': 'An unknown error occurred',
+  'editor.comment.createFailed': 'Failed to create comment',
 }
 
 export default locale

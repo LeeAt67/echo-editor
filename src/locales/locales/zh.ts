@@ -248,6 +248,7 @@ const locale: Record<string, string> = {
   'editor.comment.noSelection': '请先选择一些文本',
   'editor.comment.contentRequired': '请输入评论内容',
   'editor.comment.unknownError': '发生未知错误',
+  'editor.comment.createFailed': '评论创建失败',
 }
 
 export default locale

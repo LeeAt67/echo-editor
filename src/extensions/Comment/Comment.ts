@@ -18,7 +18,8 @@ export interface CommentOptions extends GeneralOptions<CommentOptions> {
   // 评论激活回调 - 当用户点击评论时触发
   onCommentActivated?: (commentId: string | null) => void
   // 评论创建回调 - 当用户创建评论时触发，将数据暴露给外部
-  onCommentCreate?: (data: CommentData) => void | Promise<void>
+  // 返回值：返回真实的评论ID（从后端获取），如果返回null则表示创建失败
+  onCommentCreate?: (data: CommentData) => void | Promise<void> | Promise<string | null>
 }
 
 // 插件 Key
