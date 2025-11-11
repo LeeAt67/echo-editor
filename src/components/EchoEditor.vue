@@ -138,6 +138,7 @@ const contentDynamicStyles = computed(() => ({
   ...(!props.customFullscreen && unref(isFullscreen)
     ? { height: '100%', overflowY: 'auto' as const }
     : {
+        flex: '1',
         minHeight: getCssUnitWithDefault(props.minHeight),
         maxHeight: getCssUnitWithDefault(props.maxHeight),
         overflowY: 'auto' as const,
