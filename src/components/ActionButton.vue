@@ -41,7 +41,7 @@ withDefaults(defineProps<Props>(), {
 <template>
   <TooltipProvider>
     <Tooltip :delay-duration="0">
-      <TooltipTrigger>
+      <TooltipTrigger as="div">
         <Toggle
           size="sm"
           class="h-[32px]"

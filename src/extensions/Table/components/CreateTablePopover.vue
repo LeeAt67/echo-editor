@@ -24,8 +24,8 @@ const emit = defineEmits<Emits>()
 
 <template>
   <Popover>
-    <PopoverTrigger as-child>
-      <button :disabled="disabled" class="m-0 p-0">
+    <PopoverTrigger  as="div">
+      <button :disabled="disabled" class="m-0 p-0" type="button">
         <slot name="trigger" />
       </button>
     </PopoverTrigger>

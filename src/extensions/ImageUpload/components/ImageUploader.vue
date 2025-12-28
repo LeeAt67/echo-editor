@@ -53,7 +53,7 @@ function handleClick() {
 <template>
   <NodeViewWrapper class="p-0 m-0" data-drag-handle>
     <Popover defaultOpen>
-      <PopoverTrigger as-child>
+      <PopoverTrigger as="div">
         <div
           class="flex items-center w-full p-3 my-3 hover:bg-accent border border-border text-muted-foreground cursor-pointer rounded-sm transition-all"
         >
@@ -73,7 +73,7 @@ function handleClick() {
             <TabsTrigger value="link"> {{ t('editor.image.dialog.tab.url') }} </TabsTrigger>
           </TabsList>
           <TabsContent value="upload">
-            <Button class="w-full mt-1" size="sm" @click="handleClick">{{
+            <Button class="w-full mt-1" size="sm" @click="handleClick" type="button">{{
               t('editor.image.dialog.tab.upload')
             }}</Button>
             <input type="file" accept="image/*" ref="fileInput" multiple style="display: none" @change="handleFile" />

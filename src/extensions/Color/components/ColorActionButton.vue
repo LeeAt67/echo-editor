@@ -73,6 +73,7 @@ function toggleColor(e: any) {
         size="icon"
         class="h-[32px] w-3 rounded-l-none hover:bg-muted-foreground/20"
         :disabled="disabled"
+        type="button"
       >
         <Icon class="w-3 h-3 text-zinc-500" name="MenuDown" />
       </Button>

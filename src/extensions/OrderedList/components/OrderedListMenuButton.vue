@@ -88,7 +88,7 @@ function toggleOrderedList(item: OrderedListOption) {
   >
     <TooltipProvider>
       <Tooltip :delay-duration="0" v-for="item in OrderedListOptions" :key="item.value">
-        <TooltipTrigger as-child>
+        <TooltipTrigger as="div">
           <MenuItem class="p-0" @click="toggleOrderedList(item)">
             <div
               :class="[active === item.value ? 'bg-accent border border-accent-foreground' : '']"

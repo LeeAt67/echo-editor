@@ -46,8 +46,8 @@ watchEffect(() => {
   <div class="flex items-center h-[32px] hover:bg-muted rounded-md">
     <ActionButton :tooltip="tooltip" :disabled="disabled" :action="toggleColor" :tooltip-options="tooltipOptions">
       <template #icon>
-        <span class="text-sm flex items-center justify-center"
-          ><svg width="18px" height="18px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <span class="text-sm flex items-center justify-center">
+          <svg width="18px" height="18px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg">
             <g id="icon/填充色" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <g id="icon/背景颜色">
                 <g id="编组" fill="currentColor">
@@ -75,8 +75,9 @@ watchEffect(() => {
                   :fill="selectedColor || '#FBDE28'"
                 ></path>
               </g>
-            </g></svg
-        ></span>
+            </g>
+          </svg>
+        </span>
       </template>
     </ActionButton>
     <color-picker v-model="selectedColor" @change="onChange" highlight :disabled="disabled">
@@ -85,6 +86,7 @@ watchEffect(() => {
         size="icon"
         class="w-3 h-[32px] rounded-l-none hover:bg-muted-foreground/20"
         :disabled="disabled"
+        type="button"
       >
         <Icon class="w-3 h-3 text-zinc-500" name="MenuDown" />
       </Button>

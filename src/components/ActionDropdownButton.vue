@@ -29,7 +29,7 @@ const props = withDefaults(defineProps<Props>(), {
 
 <template>
   <Popover>
-    <PopoverTrigger :disabled="disabled">
+    <PopoverTrigger :disabled="disabled" as="div">
       <ActionMenuButton
         :class="btn_class"
         :title="title"
