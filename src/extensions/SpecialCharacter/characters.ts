@@ -10,6 +10,7 @@ export interface Character {
 }
 
 // 货币符号
+// Currency symbols
 const currencyCharacters: Character[] = [
   { code: 36, name: 'dollar sign', char: '$' },
   { code: 162, name: 'cent sign', char: '¢' },
@@ -53,6 +54,7 @@ const currencyCharacters: Character[] = [
 ]
 
 // 文本符号
+// Text symbols
 const textCharacters: Character[] = [
   { code: 169, name: 'copyright sign', char: '©' },
   { code: 174, name: 'registered sign', char: '®' },
@@ -70,6 +72,7 @@ const textCharacters: Character[] = [
 ]
 
 // 引号和标点符号
+// Quotation marks and punctuation marks
 const quotationCharacters: Character[] = [
   { code: 8249, name: 'single left-pointing angle quotation mark', char: '‹' },
   { code: 8250, name: 'single right-pointing angle quotation mark', char: '›' },
@@ -111,6 +114,7 @@ const quotationCharacters: Character[] = [
 ]
 
 // 数学符号
+// Mathematical symbols
 const mathematicalCharacters: Character[] = [
   { code: 402, name: 'function / florin', char: 'ƒ' },
   { code: 8747, name: 'integral', char: '∫' },
@@ -142,6 +146,7 @@ const mathematicalCharacters: Character[] = [
 ]
 
 // 扩展拉丁字母
+// Extended Latin alphabet
 const extendedLatinCharacters: Character[] = [
   { code: 192, name: 'A - grave', char: 'À' },
   { code: 193, name: 'A - acute', char: 'Á' },
@@ -273,6 +278,7 @@ const extendedLatinCharacters: Character[] = [
 ]
 
 // 符号
+// symbol
 const symbolCharacters: Character[] = [
   { code: 8501, name: 'alef symbol', char: 'ℵ' },
   { code: 982, name: 'pi symbol', char: 'ϖ' },
@@ -283,6 +289,7 @@ const symbolCharacters: Character[] = [
 ]
 
 // 箭头
+// arrow
 const arrowCharacters: Character[] = [
   { code: 8592, name: 'leftwards arrow', char: '←' },
   { code: 8593, name: 'upwards arrow', char: '↑' },
@@ -328,6 +335,7 @@ const arrowCharacters: Character[] = [
 
 
 // 所有字符分类
+// All character categories
 export const characterCategories: CharacterCategory[] = [
   {
     name: 'currency',
@@ -360,6 +368,7 @@ export const characterCategories: CharacterCategory[] = [
 ]
 
 // 创建"全部"分类，包含所有字符
+// Create an "All" category containing all characters.
 export const allCharacters: Character[] = characterCategories
   .filter(category => category.name !== 'userDefined')
   .flatMap(category => category.characters)
@@ -373,6 +382,7 @@ export const allCategories: CharacterCategory[] = [
 ]
 
 // 搜索字符
+// Search characters
 export function searchCharacters(characters: Character[], searchTerm: string): Character[] {
   if (!searchTerm) return characters
 

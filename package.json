@@ -1,14 +1,14 @@
 {
-  "name": "@leeat/echo-editor",
+  "name": "echo-editor",
   "version": "0.6.10",
   "private": false,
   "license": "MIT",
   "description": "A modern AI-powered WYSIWYG and Highly Customized RichTextEditor for Vue, based on Tiptap and shadcn-vue",
-  "author": "1036232425@qq.com",
-  "homepage": "https://github.com/LeeAt67",
+  "author": "liox@p-link.de",
+  "homepage": "https://github.com/Lioxen",
   "repository": {
     "type": "git",
-    "url": "https://github.com/LeeAt67/echo-editor"
+    "url": "https://github.com/Lioxen/echo-editor"
   },
   "scripts": {
     "dev": "vite",

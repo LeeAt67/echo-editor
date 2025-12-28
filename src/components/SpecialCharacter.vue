@@ -122,12 +122,13 @@ watch(
               <TooltipProvider :delay-duration="0">
                 <div class="grid grid-cols-8 md:grid-cols-12 lg:grid-cols-16 gap-2">
                   <Tooltip :key="char.code" v-for="char in currentCharacters">
-                    <TooltipTrigger>
+                    <TooltipTrigger as="div">
                       <button
                         @click="handleCharacterClick(char)"
                         class="w-10 h-10 border rounded-md flex items-center justify-center hover:bg-accent hover:border-accent-foreground transition-colors"
                         :title="char.name"
                         :disabled="!editor.isEditable"
+                        type="button"
                       >
                         <span class="text-lg">{{ char.char }}</span>
                       </button>
@@ -152,7 +153,7 @@ watch(
         </Tabs>
       </div>
       <DialogFooter class="p-6 pt-0">
-        <Button @click="handleClose">
+        <Button @click="handleClose" type="button">
           {{ t('editor.close') }}
         </Button>
       </DialogFooter>

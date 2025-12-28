@@ -86,7 +86,7 @@ const currentEditorContent = computed(() => {
         </ResizablePanelGroup>
       </div>
       <DialogFooter class="p-2 pt-0">
-        <Button @click="handleClose"> {{ t('editor.close') }} </Button>
+        <Button @click="handleClose" type="button"> {{ t('editor.close') }} </Button>
       </DialogFooter>
     </DialogContent>
   </Dialog>
